@@ -11,8 +11,8 @@ public class ToasterMessage {
 
     }
 
-    public static void add(Context context,int a, int b, int c){
-        a=b+c;
+    public static void add(Context context, int b, int c){
+       int a=b+c;
 
         Toast.makeText(context,a,Toast.LENGTH_SHORT).show();
     }

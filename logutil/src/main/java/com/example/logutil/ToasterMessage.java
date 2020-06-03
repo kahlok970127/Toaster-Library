@@ -5,30 +5,18 @@ import android.widget.Toast;
 
 public class ToasterMessage {
 
-//    public static void s(Context c, String message){
-//
-//        Toast.makeText(c,message,Toast.LENGTH_SHORT).show();
-//
-//    }
+    public static void s(Context c, String message){
 
-    public float x,y;
+        Toast.makeText(c,message,Toast.LENGTH_SHORT).show();
 
-    public ToasterMessage(ToasterMessage vec){
-        this.x=vec.x;
-        this.y=vec.y;
     }
 
-    public ToasterMessage(float x,float y)
-    {
-        this.x=x;
-        this.y=y;
-    }
-    public  ToasterMessage copy(){
-        return new ToasterMessage(this);
+    public static void add(Context context,int a, int b, int c){
+        a=b+c;
+
+        Toast.makeText(context,a,Toast.LENGTH_SHORT).show();
     }
 
-    public void debug(){
-        System.out.println("{"+x+","+y+"}");
-    }
+
 
 }

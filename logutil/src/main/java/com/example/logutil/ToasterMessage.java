@@ -3,6 +3,7 @@ package com.example.logutil;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.StrictMode;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,7 +28,8 @@ public class ToasterMessage {
 
 
     public static void StartShare(Context context,ArrayList<String> mFileList) {
-
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND_MULTIPLE);
         intent.putExtra(Intent.EXTRA_SUBJECT, "Here are some files.");

@@ -27,25 +27,17 @@ public class ToasterMessage {
 
 
     public static void StartShare(Context context,ArrayList<String> mFileList) {
-        String Type = "";
 
-            Type = "application/pdf";
+
 
 
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND_MULTIPLE);
         intent.putExtra(Intent.EXTRA_SUBJECT, "Here are some files.");
         intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        intent.setType(Type);
+        intent.setType("text/html");
 
-        ArrayList<Uri> files = new ArrayList<>();
-
-        for (String path : mFileList /* List of the files you want to send */) {
-            String shareUri = path;
-            files.add(Uri.parse(shareUri));
-        }
-
-        intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, files);
+        intent.putStringArrayListExtra(Intent.EXTRA_STREAM, mFileList);
         context.startActivity(intent);
     }
 

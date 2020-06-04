@@ -28,9 +28,6 @@ public class ToasterMessage {
 
     public static void StartShare(Context context,ArrayList<String> mFileList) {
 
-
-
-
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND_MULTIPLE);
         intent.putExtra(Intent.EXTRA_SUBJECT, "Here are some files.");
@@ -39,6 +36,15 @@ public class ToasterMessage {
 
         intent.putStringArrayListExtra(Intent.EXTRA_STREAM, mFileList);
         context.startActivity(intent);
+    }
+
+    public static void share(Context context,String a){
+        Intent shareIntent = new Intent();
+        shareIntent.setType("text/html");
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "This is the URL I'm sharing.");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, a);
+        context.startActivity(Intent.createChooser(shareIntent, "Share With..."));
     }
 
 }

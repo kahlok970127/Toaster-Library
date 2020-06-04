@@ -50,4 +50,6 @@ public class ToasterMessage {
         context.startActivity(Intent.createChooser(shareIntent, "Share With..."));
     }
 
+
+
 }

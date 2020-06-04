@@ -28,6 +28,7 @@ public class ToasterMessage {
 
 
     public static void StartShare(Context context,ArrayList<String> mFileList) {
+
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
         Intent intent = new Intent();

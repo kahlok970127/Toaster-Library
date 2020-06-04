@@ -23,14 +23,14 @@ import java.util.Random;
 import static android.content.Context.DOWNLOAD_SERVICE;
 
 public class AsmGvrDownloadConfig {
-    private Uri mDirpath;
-    private DownloadManager mgr = null;
-    private long mDownloadID;
-    private File mFile;
-    private String mFileName = "";
-    private DocumentFile mFileuri;
-    private String mViewPagerURL;
-    private Uri mMovefileuri = null;
+    private static Uri mDirpath;
+    private static DownloadManager mgr = null;
+    private static long mDownloadID;
+    private static File mFile;
+    private static String mFileName = "";
+    private static DocumentFile mFileuri;
+    private static String mViewPagerURL;
+    private static Uri mMovefileuri = null;
 
     private static final String ALLOWED_CHARACTERS ="0123456789qwertyuiopasdfghjklzxcvbnm";
 
@@ -46,7 +46,7 @@ public class AsmGvrDownloadConfig {
         return sb.toString();
     }
 
-    public void startDownload(Context context, String uri, Uri path) {
+    public static void startDownload(Context context, String uri, Uri path) {
 
         mViewPagerURL = uri;
         mFileName = URLUtil.guessFileName(mViewPagerURL, null, MimeTypeMap.getFileExtensionFromUrl(mViewPagerURL));
@@ -74,7 +74,7 @@ public class AsmGvrDownloadConfig {
 
 
 
-    BroadcastReceiver onComplete = new BroadcastReceiver() {
+    static BroadcastReceiver onComplete = new BroadcastReceiver() {
         public void onReceive(Context ctxt, Intent intent) {
             long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, 0L);
             if (mDownloadID == id) {
@@ -104,7 +104,7 @@ public class AsmGvrDownloadConfig {
         }
     };
 
-    public Uri copyFileToSafFolder(Context context, Uri src, Uri dirpath, String destFileName) throws FileNotFoundException {
+    public static Uri copyFileToSafFolder(Context context, Uri src, Uri dirpath, String destFileName) throws FileNotFoundException {
         InputStream inputStream = context.getContentResolver().openInputStream(src);
         String docId = DocumentsContract.getTreeDocumentId(dirpath);
         Uri dirUri = DocumentsContract.buildDocumentUriUsingTree(dirpath, docId);

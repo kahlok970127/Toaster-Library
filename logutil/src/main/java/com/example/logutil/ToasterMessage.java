@@ -26,7 +26,7 @@ public class ToasterMessage {
     }
 
 
-    public void StartShare(Context context,ArrayList<String> mFileList) {
+    public static void StartShare(Context context,ArrayList<String> mFileList) {
         String Type = "";
 
             Type = "application/pdf";

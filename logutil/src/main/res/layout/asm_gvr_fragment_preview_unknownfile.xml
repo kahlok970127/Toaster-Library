@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+
+
+    <data>
+<!--        <variable-->
+<!--            name="bindingCallback"-->
+<!--            type="com.alcodes.alcodessmgalleryviewer.databinding.bindingcallbacks.UnknownFileCallback" />-->
+    </data>
+
+
+    <LinearLayout
+
+        android:id="@+id/preview_unknown_file_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:gravity="center"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/no_internet"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/FileTypeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30sp"
+            android:textSize="30sp"
+            tools:text="File Type" />
+
+        <TextView
+            android:id="@+id/FileNameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30sp"
+            android:textSize="30sp"
+            tools:text="File Name:" />
+
+<!--        <Button-->
+<!--            android:id="@+id/btnShareWith"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:onClick="@{() -> bindingCallback.onShareButtonClicked()}"-->
+<!--            android:padding="16dp"-->
+<!--            android:text="@string/btnShareWith"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold" />-->
+
+
+<!--        <Button-->
+<!--            android:id="@+id/btnOpenWith"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:onClick="@{() -> bindingCallback.onOpenWithButtonClicked()}"-->
+<!--            android:text="@string/btnOpenWith"-->
+<!--            android:padding="16dp"-->
+
+<!--            android:textColor="#ffffff"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnDownload"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:onClick="@{() -> bindingCallback.onDownloadButtonClicked()}"-->
+<!--            android:text="@string/btnDownload"-->
+<!--            android:padding="16dp"-->
+<!--            android:visibility="invisible"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold"/>-->
+
+<!--        <include-->
+<!--            android:id="@+id/included_panel_file_details"-->
+<!--            layout="@layout/asm_gvr_panel_file_details" />-->
+    </LinearLayout>
+
+
+</layout>

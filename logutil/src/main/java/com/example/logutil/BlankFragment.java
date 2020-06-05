@@ -1,5 +1,7 @@
 package com.example.logutil;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,8 +26,8 @@ public class BlankFragment extends Fragment {
         // Required empty public constructor
     }
 
-public void Change_Text(String text){
-    TextView mytext=(TextView) getActivity ().findViewById ( R.id.text1 );
+public static void  Change_Text(Activity context, String text){
+    TextView mytext=(TextView) context.findViewById ( R.id.text1 );
     mytext.setText ( text );
 }
     public static BlankFragment newInstance(String param1, String param2) {
